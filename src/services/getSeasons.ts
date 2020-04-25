@@ -28,9 +28,8 @@ const getSeasons: GetSeasons = async ({ startYear, endYear }) => {
     startYear = startYear + 1;
   }
 
-  return getFormattedSeasonsData(
-    await APIService.fetchSeasonsData(seasonUrls)
-  ) as Array<Response>;
+  const res = await APIService.fetchSeasonsData(seasonUrls);
+  return getFormattedSeasonsData<Array<Response>>(res);
 };
 
 const getFormattedSeasonsData = <T>(apiResponse: T[]): Array<Response> =>
