@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import SeasonRaces from "../../components/SeasonRaces";
 import getSeasonDetails from "../../services/getSeasonDetails";
 
 const Details = () => {
@@ -17,11 +18,7 @@ const Details = () => {
     fetchSeasonsData();
   }, [setSeasonDetails, year]);
 
-  return (
-    <div>
-      <h1>Details page</h1>
-    </div>
-  );
+  return <div>{seasonDetails && <SeasonRaces data={seasonDetails} />}</div>;
 };
 
 export default Details;
