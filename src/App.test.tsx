@@ -1,3 +1,3 @@
-describe("", () => {
-  it("renders learn react link", () => {});
+describe("<SeasonsList/>", () => {
+  it("renders SeasonsList correctly", () => {});
 });
