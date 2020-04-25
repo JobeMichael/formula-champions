@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from "react";
+import { Spinner } from "react-bootstrap";
 import SeasonsList from "../../components/SeasonsList";
 import getSeasons from "../../services/getSeasons";
 import "./Seasons.css";
 
 const Home = () => {
-  const [seasons, setSeasons] = useState() as any;
+  const [seasons, setSeasons] = useState([]) as any;
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     const fetchSeasonsData = async () => {
-      const result = await getSeasons({
-        startYear: 2005,
-        endYear: 2015,
-      });
-      setSeasons(result);
-    };
+      const startYear = 2005;
+      const endYear = 2015;
 
+      const result = await getSeasons({
+        startYear: startYear,
+        endYear: endYear,
+      });
+      setSeasons((prevState: any) => [...prevState, ...result]);
+      setLoading(false);
+    };
     fetchSeasonsData();
   }, []);
 
@@ -25,6 +31,11 @@ const Home = () => {
         <p> Formula1 races winners from 2005 to 2015.</p>
       </div>
       {seasons && <SeasonsList data={seasons} />}
+      {loading && (
+        <div className="loader-holder">
+          <Spinner animation="border" variant="info" />
+        </div>
+      )}
     </div>
   );
 };
