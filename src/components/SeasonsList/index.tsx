@@ -9,16 +9,16 @@ interface SeasonListProps {
 
 const SeasonsList = ({ data }: SeasonListProps) => {
   return (
-    <Table responsive>
+    <Table responsive striped bordered hover>
       <thead>
         <tr>
-          <th>#</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
-          <th>Table heading</th>
+          <th>Season</th>
+          <th>Name</th>
+          <th>Nationality</th>
+          <th>Team</th>
+          <th>Wins</th>
+          <th>Points</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
