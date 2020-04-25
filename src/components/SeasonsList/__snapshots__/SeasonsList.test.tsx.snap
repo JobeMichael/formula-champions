@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SeasonsList/> renders SeasonsList correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="table-responsive"
+  >
+    <table
+      class="table"
+    >
+      <thead>
+        <tr>
+          <th>
+            #
+          </th>
+          <th>
+            Table heading
+          </th>
+          <th>
+            Table heading
+          </th>
+          <th>
+            Table heading
+          </th>
+          <th>
+            Table heading
+          </th>
+          <th>
+            Table heading
+          </th>
+          <th>
+            Table heading
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            2006
+          </td>
+          <td>
+            Alonso Fernando
+          </td>
+          <td>
+            Spanish
+          </td>
+          <td>
+            Renault
+          </td>
+          <td>
+            7
+          </td>
+          <td>
+            134
+          </td>
+          <td>
+            <button
+              class="btn btn-primary"
+              type="button"
+            >
+              Details
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</DocumentFragment>
+`;

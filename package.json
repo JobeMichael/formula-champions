@@ -13,8 +13,10 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-router-dom": "^5.1.4",
     "D": "^1.0.0",
+    "bootstrap": "^4.4.1",
     "jest-fetch-mock": "^3.0.3",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
@@ -48,5 +50,8 @@
       "/src/serviceWorker.js",
       "/src/index.ts*"
     ]
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.0"
   }
 }

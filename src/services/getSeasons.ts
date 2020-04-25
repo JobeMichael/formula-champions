@@ -6,10 +6,10 @@ interface GetSeasonsArg {
 }
 
 interface GetSeasons {
-  (arg: GetSeasonsArg): Promise<Array<Response>>;
+  (arg: GetSeasonsArg): Promise<Array<SeasonList>>;
 }
 
-interface Response {
+export interface SeasonList {
   name: string;
   nationality: string;
   points: string;
@@ -29,11 +29,11 @@ const getSeasons: GetSeasons = async ({ startYear, endYear }) => {
   }
 
   const res = await APIService.fetchSeasonsData(seasonUrls);
-  return getFormattedSeasonsData<Array<Response>>(res);
+  return getFormattedSeasonsData<Array<SeasonList>>(res);
 };
 
-const getFormattedSeasonsData = <T>(apiResponse: T[]): Array<Response> =>
-  apiResponse.reduce((acc: any = [], item: any) => {
+const getFormattedSeasonsData = <T>(apiSeasonList: T[]): Array<SeasonList> =>
+  apiSeasonList.reduce((acc: any = [], item: any) => {
     const {
       season,
       StandingsLists: [
