@@ -32,7 +32,7 @@ const SeasonsList = ({ data }: SeasonListProps) => {
               <td>{wins}</td>
               <td>{points}</td>
               <td>
-                <Link to={`season/${season}`}>
+                <Link to={`season/${season}`} state={{ name }}>
                   <Button>Details</Button>
                 </Link>
               </td>

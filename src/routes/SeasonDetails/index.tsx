@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import SeasonRaces from "../../components/SeasonRaces";
 import Link from "../../components/UI/Link";
 import getSeasonDetails from "../../services/getSeasonDetails";
@@ -9,6 +9,8 @@ const Details = () => {
   const [seasonDetails, setSeasonDetails] = useState() as any;
   console.log("Details -> seasonDetails", seasonDetails);
   const { year } = useParams();
+  const { state } = useLocation();
+  console.log("Details -> location", state);
 
   useEffect(() => {
     const fetchSeasonsData = async () => {
