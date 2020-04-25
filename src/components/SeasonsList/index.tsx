@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Table } from "react-bootstrap";
 import { SeasonList } from "../../services/getSeasons";
 import Link from "../UI/Link";
+import "./SeasonsList.css";
 
 interface SeasonListProps {
   data: Array<SeasonList>;
@@ -25,7 +26,7 @@ const SeasonsList = ({ data }: SeasonListProps) => {
         <td>{team}</td>
         <td>{wins}</td>
         <td>{points}</td>
-        <td>
+        <td className="button-holder">
           <Link to={`season/${season}`} state={{ driverId }}>
             <Button>Details</Button>
           </Link>

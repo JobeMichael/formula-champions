@@ -1,0 +1,18 @@
+.table thead {
+  background: #00a7bb;
+  color: #fff;
+}
+.table td,
+.table th {
+  padding: 0.25rem;
+  vertical-align: middle;
+  border-top: 1px solid #dee2e6;
+}
+.table .button-holder {
+  text-align: center;
+}
+
+.table .button-holder a button {
+  background-color: #2c8280;
+  border: none;
+}

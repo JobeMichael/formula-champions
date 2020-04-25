@@ -1,0 +1,13 @@
+.star {
+  color: #c3c322;
+  font-size: 26px;
+  position: absolute;
+  top: 0px;
+}
+
+.table td,
+.table th {
+  padding: 0.65rem !important;
+  vertical-align: middle;
+  position: relative;
+}

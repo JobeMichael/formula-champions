@@ -1,5 +1,6 @@
 import React from "react";
 import { Table } from "react-bootstrap";
+import "./SeasonRaces.css";
 
 const SeasonRaces = ({ data, driverId: ChampionId }: any) => (
   <Table responsive striped bordered hover>
@@ -25,11 +26,15 @@ const SeasonRaces = ({ data, driverId: ChampionId }: any) => (
         }: any) => (
           <tr key={raceName}>
             <td>{raceName}</td>
-            <td>{name}</td>
+            <td>
+              {name}{" "}
+              {driverId === ChampionId && (
+                <span className="star">&#10026;</span>
+              )}
+            </td>
             <td>{team}</td>
             <td>{nationality}</td>
             <td>{time}</td>
-            <td>{driverId === ChampionId && "champion"}</td>
           </tr>
         )
       )}

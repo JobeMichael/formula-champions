@@ -51,7 +51,9 @@ exports[`<SeasonsList/> renders SeasonsList correctly 1`] = `
           <td>
             134
           </td>
-          <td>
+          <td
+            class="button-holder"
+          >
             <a
               href="season/2006"
             >

@@ -21,9 +21,13 @@ const Details = () => {
   }, [setSeasonDetails, year]);
 
   return (
-    <div>
+    <div className="seasons-wrapper">
+      <div className="seasons-header">
+        <h1>{year} Season</h1>
+        <p></p>
+      </div>
       <Link to="/">
-        <Button variant="link">Back to list</Button>
+        <Button variant="link">{"< Back to list"}</Button>
       </Link>
       {seasonDetails && (
         <SeasonRaces data={seasonDetails} driverId={state?.driverId || ""} />
