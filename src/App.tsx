@@ -5,15 +5,15 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
-import Details from "./routes/Details";
-import Home from "./routes/Home";
+import SeasonDetails from "./routes/SeasonDetails";
+import Seasons from "./routes/Seasons";
 
 function App() {
   return (
     <Router basename="/">
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/details/:year" component={Details} />
+        <Route exact path="/" component={Seasons} />
+        <Route exact path="/season/:year" component={SeasonDetails} />
         <Redirect to="/" />
       </Switch>
     </Router>
