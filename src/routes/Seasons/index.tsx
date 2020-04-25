@@ -15,8 +15,8 @@ const Home = () => {
       const endYear = 2015;
 
       const result = await getSeasons({
-        startYear: startYear,
-        endYear: endYear,
+        startYear,
+        endYear,
       });
       setSeasons((prevState: any) => [...prevState, ...result]);
       setLoading(false);

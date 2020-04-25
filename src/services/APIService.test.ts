@@ -12,7 +12,9 @@ describe("APIService", () => {
 
       expect(res[0].data).toEqual("12345");
       expect(fetch.mock.calls.length).toEqual(1);
-      expect(fetch.mock.calls[0][0]).toEqual("__URL__");
+      expect(fetch.mock.calls[0][0]).toEqual(
+        "http://ergast.com/api/f1/__URL__"
+      );
     });
 
     it("should throw error, if API fails", async () => {
@@ -21,7 +23,9 @@ describe("APIService", () => {
 
       expect(res).toEqual("Error");
       expect(fetch.mock.calls.length).toEqual(1);
-      expect(fetch.mock.calls[0][0]).toEqual("__URL__");
+      expect(fetch.mock.calls[0][0]).toEqual(
+        "http://ergast.com/api/f1/__URL__"
+      );
     });
   });
 
@@ -32,7 +36,9 @@ describe("APIService", () => {
 
       expect(res.data).toEqual("12345");
       expect(fetch.mock.calls.length).toEqual(1);
-      expect(fetch.mock.calls[0][0]).toEqual("__URL__");
+      expect(fetch.mock.calls[0][0]).toEqual(
+        "http://ergast.com/api/f1/__URL__"
+      );
     });
 
     it("should throw error, if API fails", async () => {
@@ -41,7 +47,9 @@ describe("APIService", () => {
 
       expect(res).toEqual("Error");
       expect(fetch.mock.calls.length).toEqual(1);
-      expect(fetch.mock.calls[0][0]).toEqual("__URL__");
+      expect(fetch.mock.calls[0][0]).toEqual(
+        "http://ergast.com/api/f1/__URL__"
+      );
     });
   });
 });

@@ -13,13 +13,9 @@ export interface SeasonDetails {
   wins: string;
 }
 
-export const baseUrl = "http://ergast.com/api/f1";
-
 const getSeasonDetails = async (year: string) => {
-  const url = `${baseUrl}/${year}/results/1.json`;
-
+  const url = `${year}/results/1.json`;
   const res = await APIService.fetchSeasonDetailsData(url);
-
   return getFormattedData(res.MRData.RaceTable.Races);
 };
 

@@ -19,13 +19,11 @@ export interface SeasonList {
   driverId: string;
 }
 
-export const baseUrl = "http://ergast.com/api/f1";
-
 const getSeasons: GetSeasons = async ({ startYear, endYear }) => {
   const seasonUrls = [];
 
   while (endYear >= startYear) {
-    seasonUrls.push(`${baseUrl}/${startYear}/driverStandings.json`);
+    seasonUrls.push(`${startYear}/driverStandings.json`);
     startYear = startYear + 1;
   }
 
