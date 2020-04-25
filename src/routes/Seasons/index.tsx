@@ -17,8 +17,6 @@ const Home = () => {
     fetchSeasonsData();
   }, []);
 
-  console.log(seasons);
-
   return <div>{seasons && <SeasonsList data={seasons} />}</div>;
 };
 
