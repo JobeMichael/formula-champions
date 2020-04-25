@@ -8,6 +8,32 @@ interface SeasonListProps {
 }
 
 const SeasonsList = ({ data }: SeasonListProps) => {
+  const rows = data.map(
+    ({
+      name,
+      nationality,
+      wins,
+      points,
+      team,
+      season,
+      driverId,
+    }: SeasonList) => (
+      <tr key={season}>
+        <td>{season}</td>
+        <td>{name}</td>
+        <td>{nationality}</td>
+        <td>{team}</td>
+        <td>{wins}</td>
+        <td>{points}</td>
+        <td>
+          <Link to={`season/${season}`} state={{ driverId }}>
+            <Button>Details</Button>
+          </Link>
+        </td>
+      </tr>
+    )
+  );
+
   return (
     <Table responsive striped bordered hover>
       <thead>
@@ -21,25 +47,7 @@ const SeasonsList = ({ data }: SeasonListProps) => {
           <th></th>
         </tr>
       </thead>
-      <tbody>
-        {data.map(
-          ({ name, nationality, wins, points, team, season }: SeasonList) => (
-            <tr key={season}>
-              <td>{season}</td>
-              <td>{name}</td>
-              <td>{nationality}</td>
-              <td>{team}</td>
-              <td>{wins}</td>
-              <td>{points}</td>
-              <td>
-                <Link to={`season/${season}`} state={{ name }}>
-                  <Button>Details</Button>
-                </Link>
-              </td>
-            </tr>
-          )
-        )}
-      </tbody>
+      <tbody>{rows}</tbody>
     </Table>
   );
 };

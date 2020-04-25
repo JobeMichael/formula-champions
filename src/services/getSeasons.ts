@@ -16,6 +16,7 @@ export interface SeasonList {
   season: string;
   team: string;
   wins: string;
+  driverId: string;
 }
 
 export const baseUrl = "http://ergast.com/api/f1";
@@ -42,7 +43,7 @@ const getFormattedSeasonsData = <T>(apiSeasonList: T[]): Array<SeasonList> =>
             {
               points,
               wins,
-              Driver: { familyName, givenName, nationality },
+              Driver: { familyName, givenName, nationality, driverId },
               Constructors: [{ name: team }],
             },
           ],
@@ -57,6 +58,7 @@ const getFormattedSeasonsData = <T>(apiSeasonList: T[]): Array<SeasonList> =>
       name: `${familyName} ${givenName}`,
       nationality,
       team,
+      driverId,
     });
 
     return acc;

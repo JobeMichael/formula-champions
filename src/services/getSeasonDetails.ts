@@ -31,7 +31,7 @@ const getFormattedData = <T>(data: T[]): Array<T> =>
       raceName,
       Results: [
         {
-          Driver: { familyName, givenName, nationality },
+          Driver: { familyName, givenName, nationality, driverId },
           Constructor: { name: team },
           Time: { time },
         },
@@ -46,6 +46,7 @@ const getFormattedData = <T>(data: T[]): Array<T> =>
       raceName,
       team,
       time,
+      driverId,
     });
 
     return acc;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 
-const SeasonRaces = ({ data }: any) => (
+const SeasonRaces = ({ data, driverId: ChampionId }: any) => (
   <Table responsive striped bordered hover>
     <thead>
       <tr>
@@ -13,15 +13,26 @@ const SeasonRaces = ({ data }: any) => (
       </tr>
     </thead>
     <tbody>
-      {data.map(({ name, nationality, team, season, time, raceName }: any) => (
-        <tr key={raceName}>
-          <td>{raceName}</td>
-          <td>{name}</td>
-          <td>{team}</td>
-          <td>{nationality}</td>
-          <td>{time}</td>
-        </tr>
-      ))}
+      {data.map(
+        ({
+          name,
+          nationality,
+          team,
+          season,
+          time,
+          raceName,
+          driverId,
+        }: any) => (
+          <tr key={raceName}>
+            <td>{raceName}</td>
+            <td>{name}</td>
+            <td>{team}</td>
+            <td>{nationality}</td>
+            <td>{time}</td>
+            <td>{driverId === ChampionId && "champion"}</td>
+          </tr>
+        )
+      )}
     </tbody>
   </Table>
 );

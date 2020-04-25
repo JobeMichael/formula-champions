@@ -7,10 +7,8 @@ import getSeasonDetails from "../../services/getSeasonDetails";
 
 const Details = () => {
   const [seasonDetails, setSeasonDetails] = useState() as any;
-  console.log("Details -> seasonDetails", seasonDetails);
   const { year } = useParams();
-  const { state } = useLocation();
-  console.log("Details -> location", state);
+  const { state } = useLocation() as any;
 
   useEffect(() => {
     const fetchSeasonsData = async () => {
@@ -27,7 +25,9 @@ const Details = () => {
       <Link to="/">
         <Button variant="link">Back to list</Button>
       </Link>
-      {seasonDetails && <SeasonRaces data={seasonDetails} />}
+      {seasonDetails && (
+        <SeasonRaces data={seasonDetails} driverId={state?.driverId || ""} />
+      )}
     </div>
   );
 };
