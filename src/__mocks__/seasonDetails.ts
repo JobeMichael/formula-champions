@@ -6,4 +6,5 @@ export const seasonDetails = {
   season: "2005",
   team: "Renault",
   time: "1:24:17.336",
+  driverId: "fisichella",
 };

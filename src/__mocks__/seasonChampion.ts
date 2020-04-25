@@ -5,4 +5,5 @@ export const seasonChampion = {
   name: "Alonso Fernando",
   nationality: "Spanish",
   team: "Renault",
+  driverId: "alonso",
 };
