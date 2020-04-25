@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Button } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import SeasonRaces from "../../components/SeasonRaces";
+import Link from "../../components/UI/Link";
 import getSeasonDetails from "../../services/getSeasonDetails";
 
 const Details = () => {
@@ -18,7 +20,14 @@ const Details = () => {
     fetchSeasonsData();
   }, [setSeasonDetails, year]);
 
-  return <div>{seasonDetails && <SeasonRaces data={seasonDetails} />}</div>;
+  return (
+    <div>
+      <Link to="/">
+        <Button variant="link">Back to list</Button>
+      </Link>
+      {seasonDetails && <SeasonRaces data={seasonDetails} />}
+    </div>
+  );
 };
 
 export default Details;
