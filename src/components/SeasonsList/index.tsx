@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Table } from "react-bootstrap";
 import { SeasonList } from "../../services/getSeasons";
+import Link from "../UI/Link";
 
 interface SeasonListProps {
   data: Array<SeasonList>;
@@ -31,7 +32,9 @@ const SeasonsList = ({ data }: SeasonListProps) => {
               <td>{wins}</td>
               <td>{points}</td>
               <td>
-                <Button>Details</Button>
+                <Link to={`season/${season}`}>
+                  <Button>Details</Button>
+                </Link>
               </td>
             </tr>
           )

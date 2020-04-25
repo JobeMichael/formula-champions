@@ -1,5 +1,6 @@
 import { render } from "@testing-library/react";
 import React from "react";
+import { MemoryRouter } from "react-router-dom";
 import SeasonsList from "./";
 
 const mockData = {
@@ -13,7 +14,11 @@ const mockData = {
 
 describe("<SeasonsList/>", () => {
   it("renders SeasonsList correctly", () => {
-    const { asFragment } = render(<SeasonsList data={[mockData]} />);
+    const { asFragment } = render(
+      <MemoryRouter>
+        <SeasonsList data={[mockData]} />
+      </MemoryRouter>
+    );
 
     expect(asFragment()).toMatchSnapshot();
   });
