@@ -1,8 +1,14 @@
 import React from "react";
 import { Table } from "react-bootstrap";
+import { SeasonDetails } from "../../services/getSeasonDetails";
 import "./SeasonRaces.css";
 
-const SeasonRaces = ({ data, driverId: ChampionId }: any) => (
+interface SeasonRacesProps {
+  driverId: number;
+  data: Array<SeasonDetails>;
+}
+
+const SeasonRaces = ({ data, driverId: ChampionId }: SeasonRacesProps) => (
   <Table responsive striped bordered hover>
     <thead>
       <tr>
@@ -19,15 +25,14 @@ const SeasonRaces = ({ data, driverId: ChampionId }: any) => (
           name,
           nationality,
           team,
-          season,
           time,
           raceName,
           driverId,
-        }: any) => (
+        }: SeasonDetails) => (
           <tr key={raceName}>
             <td>{raceName}</td>
             <td>
-              {name}{" "}
+              {name}
               {driverId === ChampionId && (
                 <span className="star">&#10026;</span>
               )}

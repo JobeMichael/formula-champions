@@ -10,7 +10,9 @@ export interface SeasonDetails {
   points: string;
   season: string;
   team: string;
-  wins: string;
+  time: string;
+  raceName: string;
+  driverId: number;
 }
 
 const getSeasonDetails = async (year: string) => {

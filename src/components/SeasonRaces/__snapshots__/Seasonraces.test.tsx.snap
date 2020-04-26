@@ -33,7 +33,7 @@ exports[`<SeasonRaces/> highlight the row when driver is the champion 1`] = `
             Australian Grand Prix
           </td>
           <td>
-            Fisichella Giancarlo 
+            Fisichella Giancarlo
             <span
               class="star"
             >
@@ -89,7 +89,7 @@ exports[`<SeasonRaces/> renders SeasonRaces correctly 1`] = `
             Australian Grand Prix
           </td>
           <td>
-            Fisichella Giancarlo 
+            Fisichella Giancarlo
           </td>
           <td>
             Renault
