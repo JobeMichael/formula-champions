@@ -12,9 +12,8 @@ const Champions = () => {
     setLoading(true);
     const fetchSeasonsData = async () => {
       const startYear = 2005;
-      const endYear = 2005;
+      const endYear = 2015;
       const data = await getAllChampions({ startYear, endYear });
-      console.log("fetchSeasonsData -> data", data);
 
       setChampions((prevState: any) => [...prevState, ...data]);
       setLoading(false);

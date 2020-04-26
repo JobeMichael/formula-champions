@@ -16,9 +16,14 @@ export interface SeasonDetails {
 const getSeasonDetails = async (year: string) => {
   const { instance } = httpClient();
   const url = `${year}/results/1.json`;
-  const { data } = await instance.get(url);
+  const response = await instance
+    .get(url)
+    .catch((error) => console.log("Error!"));
 
-  return getFormattedData(data.MRData.RaceTable.Races);
+  if (response) {
+    return getFormattedData(response.data.MRData.RaceTable.Races);
+  }
+  return [];
 };
 
 const getFormattedData = <T>(data: T[]): Array<T> =>

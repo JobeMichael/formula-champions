@@ -24,4 +24,17 @@ describe("loanCalculator", () => {
     expect(request.url).toEqual(mockData.url);
     done();
   });
+
+  it("should returns error when API fails", async (done) => {
+    moxios.stubRequest(mockData.url, {
+      status: 404,
+      error: null,
+    });
+    await getSeasonDetails("2005");
+
+    const request = moxios.requests.mostRecent();
+    expect(request.config.method).toEqual("get");
+    expect(request.url).toEqual(mockData.url);
+    done();
+  });
 });

@@ -32,9 +32,14 @@ const getAllChampions: GetAllChampions = async ({ startYear, endYear }) => {
   const response = await axios
     .all(instances)
     .then(axios.spread((...responses) => responses))
-    .catch((errors) => {});
+    .catch((errors) => {
+      console.log("Error!");
+    });
 
-  return getFormattedSeasonsData(response as any);
+  if (response) {
+    return getFormattedSeasonsData(response);
+  }
+  return [];
 };
 
 const getFormattedSeasonsData = <T>(apiSeasonList: T[]): Array<ChampionsList> =>
