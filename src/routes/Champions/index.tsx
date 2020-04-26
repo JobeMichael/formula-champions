@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
-import SeasonsList from "../../components/SeasonsList";
-import getSeasons from "../../services/getSeasons";
-import "./Seasons.css";
+import ChampionList from "../../components/ChampionList";
+import getAllChampions from "../../services/getAllChampions";
+import "./Champions.css";
 
-const Home = () => {
-  const [seasons, setSeasons] = useState([]) as any;
+const Champions = () => {
+  const [champions, setChampions] = useState([]) as any;
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -13,21 +13,21 @@ const Home = () => {
     const fetchSeasonsData = async () => {
       const startYear = 2005;
       const endYear = 2005;
-      const data = await getSeasons({ startYear, endYear });
+      const data = await getAllChampions({ startYear, endYear });
 
-      setSeasons((prevState: any) => [...prevState, ...data]);
+      setChampions((prevState: any) => [...prevState, ...data]);
       setLoading(false);
     };
     fetchSeasonsData();
   }, []);
 
   return (
-    <div className="seasons-wrapper">
-      <div className="seasons-header">
+    <div className="champions-wrapper">
+      <div className="champions-header">
         <h1>2005 - 2015</h1>
         <p> Formula1 races winners from 2005 to 2015.</p>
       </div>
-      {seasons && <SeasonsList data={seasons} />}
+      {champions && <ChampionList data={champions} />}
       {loading && (
         <div className="loader-holder">
           <Spinner animation="border" variant="info" />
@@ -37,4 +37,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Champions;

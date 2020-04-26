@@ -4,6 +4,7 @@ import { useLocation, useParams } from "react-router-dom";
 import SeasonRaces from "../../components/SeasonRaces";
 import Link from "../../components/UI/Link";
 import getSeasonDetails from "../../services/getSeasonDetails";
+import "./SeasonDetails.css";
 
 const Details = () => {
   const [seasonDetails, setSeasonDetails] = useState() as any;

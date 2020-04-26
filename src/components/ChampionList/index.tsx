@@ -1,14 +1,14 @@
 import React from "react";
 import { Button, Table } from "react-bootstrap";
-import { SeasonList } from "../../services/getSeasons";
+import { ChampionsList } from "../../services/getAllChampions";
 import Link from "../UI/Link";
-import "./SeasonsList.css";
+import "./ChampionList.css";
 
-interface SeasonListProps {
-  data: Array<SeasonList>;
+interface ChampionListProps {
+  data: Array<ChampionsList>;
 }
 
-const SeasonsList = ({ data }: SeasonListProps) => {
+const ChampionList = ({ data }: ChampionListProps) => {
   const rows = data.map(
     ({
       name,
@@ -18,7 +18,7 @@ const SeasonsList = ({ data }: SeasonListProps) => {
       team,
       season,
       driverId,
-    }: SeasonList) => (
+    }: ChampionsList) => (
       <tr key={season}>
         <td>{season}</td>
         <td>{name}</td>
@@ -52,4 +52,4 @@ const SeasonsList = ({ data }: SeasonListProps) => {
     </Table>
   );
 };
-export default SeasonsList;
+export default ChampionList;

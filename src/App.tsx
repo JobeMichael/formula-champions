@@ -6,15 +6,15 @@ import {
   Switch,
 } from "react-router-dom";
 import Layout from "./components/Layout";
+import Champions from "./routes/Champions";
 import SeasonDetails from "./routes/SeasonDetails";
-import Seasons from "./routes/Seasons";
 
 function App() {
   return (
     <Layout>
       <Router basename="/">
         <Switch>
-          <Route exact path="/" component={Seasons} />
+          <Route exact path="/" component={Champions} />
           <Route exact path="/season/:year" component={SeasonDetails} />
           <Redirect to="/" />
         </Switch>

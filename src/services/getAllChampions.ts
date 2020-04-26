@@ -1,16 +1,16 @@
 import axios from "axios";
 import httpClient from "./httpClient";
 
-interface GetSeasonsArg {
+interface Period {
   startYear: number;
   endYear: number;
 }
 
-interface GetSeasons {
-  (arg: GetSeasonsArg): Promise<Array<SeasonList>>;
+interface GetAllChampions {
+  (arg: Period): Promise<Array<ChampionsList>>;
 }
 
-export interface SeasonList {
+export interface ChampionsList {
   name: string;
   nationality: string;
   points: string;
@@ -20,7 +20,7 @@ export interface SeasonList {
   driverId: string;
 }
 
-const getSeasons: GetSeasons = async ({ startYear, endYear }) => {
+const getAllChampions: GetAllChampions = async ({ startYear, endYear }) => {
   const instances = [];
   const { instance } = httpClient();
 
@@ -37,7 +37,7 @@ const getSeasons: GetSeasons = async ({ startYear, endYear }) => {
   return getFormattedSeasonsData(response as any);
 };
 
-const getFormattedSeasonsData = <T>(apiSeasonList: T[]): Array<SeasonList> =>
+const getFormattedSeasonsData = <T>(apiSeasonList: T[]): Array<ChampionsList> =>
   apiSeasonList.reduce((acc: any = [], item: any) => {
     const {
       season,
@@ -68,4 +68,4 @@ const getFormattedSeasonsData = <T>(apiSeasonList: T[]): Array<SeasonList> =>
     return acc;
   }, []);
 
-export default getSeasons;
+export default getAllChampions;

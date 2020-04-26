@@ -1,14 +1,14 @@
 import { render } from "@testing-library/react";
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
+import ChampionList from ".";
 import { seasonChampion } from "../../__mocks__/seasonChampion";
-import SeasonsList from "./";
 
-describe("<SeasonsList/>", () => {
-  it("renders SeasonsList correctly", () => {
+describe("<ChampionList/>", () => {
+  it("renders ChampionList correctly", () => {
     const { asFragment } = render(
       <MemoryRouter>
-        <SeasonsList data={[seasonChampion]} />
+        <ChampionList data={[seasonChampion]} />
       </MemoryRouter>
     );
 
