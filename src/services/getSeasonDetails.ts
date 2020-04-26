@@ -1,4 +1,4 @@
-import APIService from "./APIService";
+import httpClient from "./httpClient";
 
 interface GetSeasonDetails {
   (year: number): Promise<Array<SeasonDetails>>;
@@ -14,9 +14,11 @@ export interface SeasonDetails {
 }
 
 const getSeasonDetails = async (year: string) => {
+  const { instance } = httpClient();
   const url = `${year}/results/1.json`;
-  const res = await APIService.fetchSeasonDetailsData(url);
-  return getFormattedData(res.MRData.RaceTable.Races);
+  const { data } = await instance.get(url);
+
+  return getFormattedData(data.MRData.RaceTable.Races);
 };
 
 const getFormattedData = <T>(data: T[]): Array<T> =>

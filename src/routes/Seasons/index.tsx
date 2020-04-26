@@ -12,13 +12,10 @@ const Home = () => {
     setLoading(true);
     const fetchSeasonsData = async () => {
       const startYear = 2005;
-      const endYear = 2015;
+      const endYear = 2005;
+      const data = await getSeasons({ startYear, endYear });
 
-      const result = await getSeasons({
-        startYear,
-        endYear,
-      });
-      setSeasons((prevState: any) => [...prevState, ...result]);
+      setSeasons((prevState: any) => [...prevState, ...data]);
       setLoading(false);
     };
     fetchSeasonsData();

@@ -1,4 +1,5 @@
-import APIService from "./APIService";
+import axios from "axios";
+import httpClient from "./httpClient";
 
 interface GetSeasonsArg {
   startYear: number;
@@ -20,15 +21,20 @@ export interface SeasonList {
 }
 
 const getSeasons: GetSeasons = async ({ startYear, endYear }) => {
-  const seasonUrls = [];
+  const instances = [];
+  const { instance } = httpClient();
 
   while (endYear >= startYear) {
-    seasonUrls.push(`${startYear}/driverStandings.json`);
+    instances.push(instance.get(`${startYear}/driverStandings.json`));
     startYear = startYear + 1;
   }
 
-  const res = await APIService.fetchSeasonsData(seasonUrls);
-  return getFormattedSeasonsData<Array<SeasonList>>(res);
+  const response = await axios
+    .all(instances)
+    .then(axios.spread((...responses) => responses))
+    .catch((errors) => {});
+
+  return getFormattedSeasonsData(response as any);
 };
 
 const getFormattedSeasonsData = <T>(apiSeasonList: T[]): Array<SeasonList> =>
@@ -47,7 +53,7 @@ const getFormattedSeasonsData = <T>(apiSeasonList: T[]): Array<SeasonList> =>
           ],
         },
       ],
-    } = item.MRData.StandingsTable;
+    } = item.data.MRData.StandingsTable;
 
     acc.push({
       season,
