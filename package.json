@@ -47,8 +47,8 @@
     "coveragePathIgnorePatterns": [
       "/node_modules/",
       "/__snapshots__/",
-      "/src/serviceWorker.js",
-      "/src/index.ts*"
+      "/src/index.ts*",
+      "/src/serviceWorker.ts"
     ]
   },
   "devDependencies": {

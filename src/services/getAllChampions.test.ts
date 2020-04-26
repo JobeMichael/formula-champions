@@ -1,11 +1,11 @@
 import moxios from "moxios";
-import { apiSeasonResults } from "../__mocks__/apiSeasonResults";
-import { seasonDetails } from "../__mocks__/seasonDetails";
-import getSeasonDetails from "./getSeasonDetails";
+import { apiDriverStandings } from "../__mocks__/apiDriverStandings";
+import { seasonChampion } from "../__mocks__/seasonChampion";
+import getAllChampions from "./getAllChampions";
 
 describe("loanCalculator", () => {
   const mockData = {
-    url: "2005/results/1.json",
+    url: "2005/driverStandings.json",
     response: { data: [{ id: "c51ce410c124a10e0db5e4b97fc2af39" }] },
   };
   beforeEach(() => moxios.install());
@@ -14,11 +14,11 @@ describe("loanCalculator", () => {
   it("should axios a thing", async (done) => {
     moxios.stubRequest(mockData.url, {
       status: 200,
-      responseText: apiSeasonResults,
+      responseText: apiDriverStandings,
     });
-    const data = await getSeasonDetails("2005");
+    const data = await getAllChampions({ startYear: 2005, endYear: 2005 });
 
-    expect(data).toEqual([seasonDetails]);
+    expect(data).toEqual([seasonChampion]);
     const request = moxios.requests.mostRecent();
     expect(request.config.method).toEqual("get");
     expect(request.url).toEqual(mockData.url);

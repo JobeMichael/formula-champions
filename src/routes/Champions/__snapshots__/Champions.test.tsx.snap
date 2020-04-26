@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Champions/> renders Champions correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="champions-wrapper"
+  >
+    <div
+      class="champions-header"
+    >
+      <h1>
+        2005 - 2015
+      </h1>
+      <p>
+         Formula1 races winners from 2005 to 2015.
+      </p>
+    </div>
+    <div
+      class="table-responsive"
+    >
+      <table
+        class="table table-striped table-bordered table-hover"
+      >
+        <thead>
+          <tr>
+            <th>
+              Season
+            </th>
+            <th>
+              Name
+            </th>
+            <th>
+              Nationality
+            </th>
+            <th>
+              Team
+            </th>
+            <th>
+              Wins
+            </th>
+            <th>
+              Points
+            </th>
+            <th />
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              2006
+            </td>
+            <td>
+              Alonso Fernando
+            </td>
+            <td>
+              Spanish
+            </td>
+            <td>
+              Renault
+            </td>
+            <td>
+              7
+            </td>
+            <td>
+              134
+            </td>
+            <td
+              class="button-holder"
+            >
+              <a
+                href="season/2006"
+              >
+                <button
+                  class="btn btn-primary"
+                  type="button"
+                >
+                  Details
+                </button>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</DocumentFragment>
+`;
