@@ -28,7 +28,7 @@ const Details = () => {
         <p></p>
       </div>
       <Link to="/">
-        <Button variant="link">{"< Back to list"}</Button>
+        <Button variant="info">{"< Back to list"}</Button>
       </Link>
       {seasonDetails && (
         <SeasonRaces data={seasonDetails} driverId={state?.driverId || ""} />
