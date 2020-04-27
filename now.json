@@ -1,0 +1,11 @@
+{
+  "type": "static",
+  "static": {
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "cd-job-portal/index.html"
+      }
+    ]
+  }
+}
