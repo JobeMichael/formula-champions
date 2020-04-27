@@ -3,7 +3,7 @@ import { apiSeasonResults } from "../__mocks__/apiSeasonResults";
 import { seasonDetails } from "../__mocks__/seasonDetails";
 import getSeasonDetails from "./getSeasonDetails";
 
-describe("loanCalculator", () => {
+describe("getSeasonDetails", () => {
   const mockData = {
     url: "2005/results/1.json",
     response: { data: [{ id: "c51ce410c124a10e0db5e4b97fc2af39" }] },
@@ -11,7 +11,7 @@ describe("loanCalculator", () => {
   beforeEach(() => moxios.install());
   afterEach(() => moxios.uninstall());
 
-  it("should axios a thing", async (done) => {
+  it("should return success data", async (done) => {
     moxios.stubRequest(mockData.url, {
       status: 200,
       responseText: apiSeasonResults,
