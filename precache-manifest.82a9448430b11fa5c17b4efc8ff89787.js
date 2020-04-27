@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3335516c0b32adfefe5c1aee3c69c875",
+    "revision": "651066de4da8b41e53be54bc295be0c3",
     "url": "/JobeMichael/formula-champions/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/JobeMichael/formula-champions/static/css/2.47e06e2e.chunk.css"
   },
   {
-    "revision": "e4f2e08fbabe9561be90",
+    "revision": "297e2021af16ed21683e",
     "url": "/JobeMichael/formula-champions/static/css/main.4de5db39.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/JobeMichael/formula-champions/static/js/2.28b378b5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e4f2e08fbabe9561be90",
-    "url": "/JobeMichael/formula-champions/static/js/main.bffd3c5c.chunk.js"
+    "revision": "297e2021af16ed21683e",
+    "url": "/JobeMichael/formula-champions/static/js/main.760b18a5.chunk.js"
   },
   {
     "revision": "ee68907e68837ca061f0",
