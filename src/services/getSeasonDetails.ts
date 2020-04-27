@@ -44,8 +44,8 @@ const getFormattedData = <T>(data: T[]): Array<T> =>
     } = item;
 
     acc.push({
+      name: `${givenName} ${familyName}`,
       season,
-      name: `${familyName} ${givenName}`,
       nationality,
       date,
       raceName,

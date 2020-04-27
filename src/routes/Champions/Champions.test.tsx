@@ -17,7 +17,7 @@ describe("<Champions/>", () => {
       </MemoryRouter>
     );
 
-    await waitForElement(() => getByText("Alonso Fernando"));
+    await waitForElement(() => getByText("Fernando Alonso"));
     expect(asFragment()).toMatchSnapshot();
   });
 });

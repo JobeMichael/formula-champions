@@ -1,6 +1,6 @@
 export const seasonDetails = {
   date: "2005-03-06",
-  name: "Fisichella Giancarlo",
+  name: "Giancarlo Fisichella",
   nationality: "Italian",
   raceName: "Australian Grand Prix",
   season: "2005",

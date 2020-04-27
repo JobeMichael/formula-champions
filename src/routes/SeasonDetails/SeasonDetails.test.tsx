@@ -24,7 +24,7 @@ describe("<SeasonDetails/>", () => {
       </MemoryRouter>
     );
 
-    await waitForElement(() => getByText("Fisichella Giancarlo"));
+    await waitForElement(() => getByText("Giancarlo Fisichella"));
     expect(asFragment()).toMatchSnapshot();
   });
 });

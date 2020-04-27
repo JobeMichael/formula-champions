@@ -64,7 +64,7 @@ const getFormattedSeasonsData = <T>(apiSeasonList: T[]): Array<ChampionsList> =>
       season,
       points,
       wins,
-      name: `${familyName} ${givenName}`,
+      name: `${givenName} ${familyName}`,
       nationality,
       team,
       driverId,
