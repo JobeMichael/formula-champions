@@ -1,24 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import ChampionList from "../../components/ChampionList";
+import { AppContext } from "../../context/AppContext";
 import getAllChampions from "../../services/getAllChampions";
 import "./Champions.css";
 
 const Champions = () => {
-  const [champions, setChampions] = useState([]) as any;
   const [loading, setLoading] = useState(false);
+  const { setAllChampions, allChampions } = useContext(AppContext);
 
   useEffect(() => {
-    setLoading(true);
     const fetchSeasonsData = async () => {
+      setLoading(true);
       const startYear = 2005;
       const endYear = 2015;
       const data = await getAllChampions({ startYear, endYear });
 
-      setChampions((prevState: any) => [...prevState, ...data]);
+      setAllChampions((prevState: any) => [...prevState, ...data]);
       setLoading(false);
     };
-    fetchSeasonsData();
+
+    if (allChampions.length === 0) {
+      fetchSeasonsData();
+    }
   }, []);
 
   return (
@@ -27,7 +31,7 @@ const Champions = () => {
         <h1>2005 - 2015</h1>
         <p> Formula1 races winners from 2005 to 2015.</p>
       </div>
-      {champions && <ChampionList data={champions} />}
+      {allChampions && <ChampionList data={allChampions} />}
       {loading && (
         <div className="loader-holder">
           <Spinner animation="border" variant="info" />
