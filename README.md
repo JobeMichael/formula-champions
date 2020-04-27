@@ -1,7 +1,7 @@
 # Details
 - Used Typescript
 - used React context.
-- Test coverage more than 95%
+- Good test coverage
 ![image](https://user-images.githubusercontent.com/15656480/80356145-54011980-8879-11ea-9f4b-cd168215f7fe.png)
 
 
