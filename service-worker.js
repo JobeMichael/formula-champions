@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/JobeMichael/formula-champions/precache-manifest.048abd187d41edc27873edadf9e59fd9.js"
+  "/JobeMichael/formula-champions/precache-manifest.c539d0857be608f6f129fed60f26d5d7.js"
 );
 
 self.addEventListener('message', (event) => {
