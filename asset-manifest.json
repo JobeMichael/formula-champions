@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/JobeMichael/formula-champions/static/css/main.4de5db39.chunk.css",
+    "main.js": "/JobeMichael/formula-champions/static/js/main.bffd3c5c.chunk.js",
+    "main.js.map": "/JobeMichael/formula-champions/static/js/main.bffd3c5c.chunk.js.map",
+    "runtime-main.js": "/JobeMichael/formula-champions/static/js/runtime-main.3570be8b.js",
+    "runtime-main.js.map": "/JobeMichael/formula-champions/static/js/runtime-main.3570be8b.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/JobeMichael/formula-champions/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.28b378b5.chunk.js": "/JobeMichael/formula-champions/static/js/2.28b378b5.chunk.js",
+    "static/js/2.28b378b5.chunk.js.map": "/JobeMichael/formula-champions/static/js/2.28b378b5.chunk.js.map",
+    "index.html": "/JobeMichael/formula-champions/index.html",
+    "precache-manifest.048abd187d41edc27873edadf9e59fd9.js": "/JobeMichael/formula-champions/precache-manifest.048abd187d41edc27873edadf9e59fd9.js",
+    "service-worker.js": "/JobeMichael/formula-champions/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/JobeMichael/formula-champions/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.4de5db39.chunk.css.map": "/JobeMichael/formula-champions/static/css/main.4de5db39.chunk.css.map",
+    "static/js/2.28b378b5.chunk.js.LICENSE.txt": "/JobeMichael/formula-champions/static/js/2.28b378b5.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3570be8b.js",
+    "static/css/2.47e06e2e.chunk.css",
+    "static/js/2.28b378b5.chunk.js",
+    "static/css/main.4de5db39.chunk.css",
+    "static/js/main.bffd3c5c.chunk.js"
+  ]
+}
